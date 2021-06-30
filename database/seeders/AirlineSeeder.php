@@ -18,5 +18,17 @@ class AirlineSeeder extends Seeder
             'code' => 'AC',
             'name' => 'Air Canada',
         ]);
+        AirLine::create([
+            'code' => 'AF',
+            'name' => 'Air France',
+        ]);
+        AirLine::create([
+            'code' => 'AL',
+            'name' => 'American Airlines',
+        ]);
+        AirLine::create([
+            'code' => 'EK',
+            'name' => 'Emirates',
+        ]);
     }
 }

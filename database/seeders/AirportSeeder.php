@@ -36,5 +36,28 @@ class AirportSeeder extends Seeder
             "longitude" => "-123.179192",
             "timezone" => "America/Vancouver"
         ]);
+        AirPort::create([
+            "code" => "YYZ",
+            "city_code" => "YYZ",
+            "name" => "Toronto Pearson International",
+            "city" => "Toronto",
+            "country_code" => "CA",
+            "region_code" => "ON",
+            "latitude" => "43.6777176000001",
+            "longitude" => "-79.624819699999",
+            "timezone" => "America/Torontor"
+        ]);
+        AirPort::create([
+            "code" => "YWG",
+            "city_code" => "YWG",
+            "name" => "Winnipeg International Airpor",
+            "city" => "Winnipeg",
+            "country_code" => "CA",
+            "region_code" => "ON",
+            "latitude" => "49.904",
+            "longitude" => "-97.2259",
+            "timezone" => "America/Torontor"
+        ]);
+
     }
 }
