@@ -29,7 +29,7 @@ class FlightService implements FlightServiceInterface
             return $data;
 
         }else{
-            return 'Your travel cannot depart after 365 days.';
+            return ['error' => 'Your travel cannot depart after 365 days.'];
         }
 
     }

@@ -19,7 +19,6 @@ class FlightController extends Controller
     public function index(Request $request)
     {
         $data = $this->flightService->getDepartureFlights($request);
-
         return response()->json($data);
     }
 

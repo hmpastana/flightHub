@@ -14,11 +14,11 @@ class AirlineSeeder extends Seeder
      */
     public function run()
     {
-        AirLine::create([
+        Airline::create([
             'code' => 'AC',
             'name' => 'Air Canada',
         ]);
-        AirLine::create([
+        Airline::create([
             'code' => 'WS',
             'name' => 'WestJet',
         ]);
