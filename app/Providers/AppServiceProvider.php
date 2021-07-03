@@ -13,19 +13,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+        $this->app->bind(
+            'App\Services\Contracts\AirportServiceInterface',
+            'App\Services\AirportService'
+        );
+
+        $this->app->bind(
+            'App\Services\Contracts\AirlineServiceInterface',
+            'App\Services\AirlineService'
+        );
+
         $this->app->bind(
             'App\Services\Contracts\FlightServiceInterface',
             'App\Services\FlightService'
         );
 
         $this->app->bind(
-            'App\Services\Contracts\AirPortServiceInterface',
-            'App\Services\AirPortService'
-        );
-
-        $this->app->bind(
-            'App\Services\Contracts\AirCompanyServiceInterface',
-            'App\Services\AirCompanyService'
+            'App\Services\Contracts\TripServiceInterface',
+            'App\Services\TripService'
         );
     }
 

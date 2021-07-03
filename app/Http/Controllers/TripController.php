@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Contracts\AirportServiceInterface;
+use App\Services\Contracts\FlightServiceInterface;
+use App\Services\Contracts\TripServiceInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AirportController extends Controller
+class TripController extends Controller
 {
-    public function __construct(AirportServiceInterface $airportService)
+    public function __construct(TripServiceInterface $tripService, FlightServiceInterface $flightService)
     {
-        $this->airportService = $airportService;
+        $this->tripService = $tripService;
+        $this->flightService = $flightService;
     }
      /**
      * Display a listing of the resource.
@@ -19,7 +21,7 @@ class AirportController extends Controller
      */
     public function index(Request $request)
     {
-        $data = $this->airportService->getAirports($request);
+        $data = $this->tripService->getTrips($request);
 
         return response()->json($data);
     }
@@ -32,7 +34,8 @@ class AirportController extends Controller
      */
     public function store(Request $request)
     {
-        $trip = $this->airportService->storeAirport($request);
+        $flights = $this->flightService->getFlights($request->number);
+        $trip = $this->tripService->storeTrip($request, $flights);
 
         return response()->json($trip);
     }
@@ -45,7 +48,7 @@ class AirportController extends Controller
      */
     public function show($id)
     {
-        $data = $this->airportService->showAirport($id);
+        $data = $this->tripService->showTrip($id);
         return response()->json($data);
     }
 
@@ -59,8 +62,7 @@ class AirportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $this->airportService->updateAirport($id, $request);
-        return response()->json($data);
+        //
     }
 
     /**
@@ -71,7 +73,7 @@ class AirportController extends Controller
      */
     public function destroy($id)
     {
-        $data = $this->airportService->deleteAirport($id);
+        $data = $this->tripService->deleteTrip($id);
         return response()->json($data);
     }
 }

@@ -2,28 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Contracts\AirlineServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class AirLineController extends Controller
+class AirlineController extends Controller
 {
+    public function __construct(AirlineServiceInterface $airlineService)
+    {
+        $this->airlineService = $airlineService;
+    }
      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $data = $this->airlineService->getAirlines($request);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return response()->json($data);
     }
 
     /**
@@ -34,7 +32,9 @@ class AirLineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trip = $this->airlineService->storeAirline($request);
+
+        return response()->json($trip);
     }
 
     /**
@@ -45,19 +45,10 @@ class AirLineController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = $this->airlineService->showAirline($id);
+        return response()->json($data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -68,7 +59,8 @@ class AirLineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->airlineService->updateAirline($id, $request);
+        return response()->json($data);
     }
 
     /**
@@ -79,6 +71,7 @@ class AirLineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = $this->airlineService->deleteAirline($id);
+        return response()->json($data);
     }
 }

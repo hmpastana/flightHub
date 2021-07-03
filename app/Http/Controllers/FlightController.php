@@ -18,19 +18,9 @@ class FlightController extends Controller
      */
     public function index(Request $request)
     {
-        $data = $this->flightService->getFlights($request);
+        $data = $this->flightService->getDepartureFlights($request);
 
         return response()->json($data);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -41,7 +31,10 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $this->flightService->storeFlight($request);
+
+        return response()->json($data);
+
     }
 
     /**
@@ -52,18 +45,8 @@ class FlightController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $data = $this->flightService->showFlight($id);
+        return response()->json($data);
     }
 
     /**
@@ -75,7 +58,8 @@ class FlightController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->flightService->updateFlight($id, $request);
+        return response()->json($data);
     }
 
     /**
@@ -86,6 +70,7 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = $this->flightService->deleteFlight($id);
+        return response()->json($data);
     }
 }
