@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\AirLine;
+use App\Models\Airline;
 use Illuminate\Database\Seeder;
 
 class AirlineSeeder extends Seeder
