@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\AirPort;
+use App\Models\Airport;
 use Illuminate\Database\Seeder;
 
 class AirportSeeder extends Seeder
@@ -14,7 +14,7 @@ class AirportSeeder extends Seeder
      */
     public function run()
     {
-        AirPort::create([
+        Airport::create([
             "code" => "YUL",
             "city_code" => "YMQ",
             "name" => "Pierre Elliott Trudeau International",
@@ -25,7 +25,7 @@ class AirportSeeder extends Seeder
             "longitude" => "-73.749908",
             "timezone" => "America/Montreal"
         ]);
-        AirPort::create([
+        Airport::create([
             "code" => "YVR",
             "city_code" => "YVR",
             "name" => "Vancouver International",
@@ -36,7 +36,7 @@ class AirportSeeder extends Seeder
             "longitude" => "-123.179192",
             "timezone" => "America/Vancouver"
         ]);
-        AirPort::create([
+        Airport::create([
             "code" => "YYZ",
             "city_code" => "YYZ",
             "name" => "Toronto Pearson International",
@@ -47,7 +47,7 @@ class AirportSeeder extends Seeder
             "longitude" => "-79.624819699999",
             "timezone" => "America/Torontor"
         ]);
-        AirPort::create([
+        Airport::create([
             "code" => "YWG",
             "city_code" => "YWG",
             "name" => "Winnipeg International Airpor",
