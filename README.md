@@ -26,6 +26,7 @@ http://flighthub.hellenpastana.com/trip/{departure_location}/{arrival_location}/
 http://flighthub.hellenpastana.com/trip/
 
 The json format to store data in this api is:
+```json
 {	
     "departure_location": "YWG",
     "departure_date": "2021-09-25",
@@ -33,6 +34,7 @@ The json format to store data in this api is:
     "number": [991, 751],
     "round_trip": true
 }
+```
 
 ## To show a trip
 http://flighthub.hellenpastana.com/trip/1
