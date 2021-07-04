@@ -23,7 +23,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/{departure_location}/{arrival_location}/{departure_date}/',[FlightController::class, 'index']);
         Route::post('/',[TripController::class, 'store']);
         Route::get('/{id}',[TripController::class, 'show']);
-        Route::delete('/{id}',[TripController::class, 'destroy']);
+        Route::delete('/{id}/delete',[TripController::class, 'destroy']);
     });
 
     Route::prefix('flight')->group(function () {
@@ -31,7 +31,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/',[FlightController::class, 'index']);
         Route::get('/{id}',[FlightController::class, 'show']);
         Route::put('/{id}',[FlightController::class, 'update']);
-        Route::delete('/{id}',[FlightController::class, 'destroy']);
+        Route::delete('/{id}/delete',[FlightController::class, 'destroy']);
     });
 
     Route::prefix('airline')->group(function () {
@@ -39,7 +39,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/',[AirlineController::class, 'index']);
         Route::get('/{id}',[AirlineController::class, 'show']);
         Route::put('/{id}',[AirlineController::class, 'update']);
-        Route::delete('/{id}',[AirlineController::class, 'destroy']);
+        Route::delete('/{id}/delete',[AirlineController::class, 'destroy']);
     });
 
     Route::prefix('airport')->group(function () {
@@ -47,7 +47,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/',[AirportController::class, 'index']);
         Route::get('/{id}',[AirportController::class, 'show']);
         Route::put('/{id}',[AirportController::class, 'update']);
-        Route::delete('/{id}',[AirportController::class, 'destroy']);
+        Route::delete('/{id}/delete',[AirportController::class, 'destroy']);
     });
 
 });
