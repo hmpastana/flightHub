@@ -1,17 +1,28 @@
-## Instructions
+# FlightHub
 
 I created the system using the latest version of the Laravel Framework. I used migrations to create the tables and all tables have a seeder to populate the database
 On this project, I used the MySQL database and for testing the application I used Insomnia.
 
-## This webservice is hosted at: 
+This application is used to build and navigate flights for a single passenger. 
+
+## Installation
+
+To start locally running this project, please run the commands bellow:
+
+- composer update
+- php artisan key: generate
+- php artisan migrate --seed
+
+PS: Prepare the file .env before running the command below, in order to run the migration correctly.
+
+## Usage
+This webservice is hosted at
 [FlightHub](http://flighthub.hellenpastana.com)
 
-## Endpoints:
-
-## To check the available flights: 
+## To check the available flights
 http://flighthub.hellenpastana.com/trip/{departure_location}/{arrival_location}/{departure_date}
 
-## To store a trip:
+## To store a trip with the selected flights in the previous api:
 http://flighthub.hellenpastana.com/trip/
 
 The json format to store data in this api is:
@@ -23,16 +34,16 @@ The json format to store data in this api is:
     "round_trip": true
 }
 
-## To show a trip:
+## To show a trip
 http://flighthub.hellenpastana.com/trip/1
 
-## To delete a trip:
+## To delete a trip
 http://flighthub.hellenpastana.com/trip/1/delete
 
-## To get a list of flights:
+## To get a list of flights
 http://flighthub.hellenpastana.com/flight
 
-## To store a flight:
+## To store a flight
 http://flighthub.hellenpastana.com/flight
 
 The json format to store data in this api is:
@@ -48,10 +59,10 @@ The json format to store data in this api is:
 }
 ```
 
-## To show a flight:
+## To show a flight
 http://flighthub.hellenpastana.com/flight/1
 
-## To update a flight:
+## To update a flight
 http://flighthub.hellenpastana.com/flight/1
 
 The json format to update data in this api is:
@@ -68,13 +79,13 @@ The json format to update data in this api is:
 }
 ```
 
-## To delete a flight:
+## To delete a flight
 http://flighthub.hellenpastana.com/flight/1/delete
 
-## To get a list of airline companies:
+## To get a list of airline companies
 http://flighthub.hellenpastana.com/airline
 
-## To store an airline:
+## To store an airline
 http://flighthub.hellenpastana.com/airline
 
 The json format to store data in this api is:
@@ -86,10 +97,10 @@ The json format to store data in this api is:
 }
 ```
 
-## To show an airline company:
+## To show an airline company
 http://flighthub.hellenpastana.com/airline/1
 
-## To update an airline company:
+## To update an airline company
 http://flighthub.hellenpastana.com/airline/1
 
 The json format to update data in this api is:
@@ -101,14 +112,14 @@ The json format to update data in this api is:
 }
 ```
 
-## To delete an airline company:
+## To delete an airline company
 http://flighthub.hellenpastana.com/airline/1/delete
 
 
-## To get a list of airports:
+## To get a list of airports
 http://flighthub.hellenpastana.com/airport
 
-## To store an airport:
+## To store an airport
 http://flighthub.hellenpastana.com/airport
 
 The json format to store data in this api is:
@@ -127,7 +138,7 @@ The json format to store data in this api is:
 }
 ```
 
-## To update an airport:
+## To update an airport
 http://flighthub.hellenpastana.com/airport/1
 
 The json format to update data in this api is:
@@ -149,19 +160,9 @@ The json format to update data in this api is:
 ## To show an airport
 http://flighthub.hellenpastana.com/airport/1
 
-## To delete an airport:
+## To delete an airport
 http://flighthub.hellenpastana.com/airport/1/delete
 
 
 Moreover, a json file with the endpoints from Insomnia are available in a separate file in public/endpoints.
 
-PS: Prepare the file .env before running the command below, in order to run the migration correctly.
-
-- composer update
-- php artisan key: generate
-- php artisan migrate --seed
-
-
-## About the project
-
-This is a project designed to get a list of available flights according to filters requested by the user.
