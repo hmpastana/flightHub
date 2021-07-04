@@ -21,7 +21,7 @@ class FlightService implements FlightServiceInterface
             $data = $this->filters($request, $data);
 
             if(($request->one_way === 'true')) {
-                $data = $data->get();
+                $data = $data->paginate(10);
             } else {
                 $data = $this->getRoundTripFlights($data, $request);
             }
@@ -54,9 +54,9 @@ class FlightService implements FlightServiceInterface
 
         $round = Flight::where('departure_airport', $request->arrival_location)
                 ->where('arrival_airport', $request->departure_location);
-                $round = $this->filters($request, $round);
-                $round = $round->union($data)
-                ->get();
+                $round = $round->unionAll($data);
+                $round = $this->filters($request, $round)
+                ->paginate(10);
 
         return $round;
     }
@@ -72,10 +72,9 @@ class FlightService implements FlightServiceInterface
             $data = $data->where('airline', $request->airline);
         }
 
-        // check asc and desc
         if(!is_null($request->order_by)){
             $order_by = explode(',', $request->order_by);
-            $data = $data->orderBy('price','desc');
+            $data = $data->orderBy($order_by[0], $order_by[1]);
         }
 
         return $data;

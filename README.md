@@ -22,7 +22,15 @@ This webservice is hosted at
 ## To check the available flights
 http://flighthub.hellenpastana.com/trip/{departure_location}/{arrival_location}/{departure_date}
 
-## To store a trip with the selected flights in the previous api:
+To filter results add the following parameters to the previous url:
+
+```json
+?airline=AC
+?order_by=price,asc (Type the collumn name and the ordering option)
+?one_way=true - if you want to set one way trips
+```
+
+## To store a trip with the selected flights in the previous api
 http://flighthub.hellenpastana.com/trip/
 
 The json format to store data in this api is:

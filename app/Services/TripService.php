@@ -17,7 +17,11 @@ class TripService implements TripServiceInterface
 
     public function showTrip($id)
     {
-        return Trip::with('flight')->findOrFail($id);
+
+        $trip['trip'] = Trip::with('flight')->findOrFail($id);
+        $trip['total_price'] = $trip['trip']['flight']->sum('price');
+
+        return $trip;
     }
 
     public function storeTrip($request, $flights)
