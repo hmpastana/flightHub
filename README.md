@@ -18,10 +18,10 @@ Note: Prepare the file .env before running the command below, in order to run th
 ## Usage
 
 This webservice is hosted at
-[FlightHub - Hellen Pastana](http://flighthub.hellenpastana.com)
+[FlightHub - Hellen Pastana](http://flighthub.hellenpastana.com/api/v1)
 
 ## To check the available flights
-http://flighthub.hellenpastana.com/trip/{departure_location}/{arrival_location}/{departure_date}
+http://flighthub.hellenpastana.com/api/v1/trip/{departure_location}/{arrival_location}/{departure_date}
 
 The parameters formats are:
 ```json
@@ -39,7 +39,7 @@ To filter the results add the following parameters to the previous url:
 ```
 
 ## To store a trip with the selected flights in the previous api
-http://flighthub.hellenpastana.com/trip/
+http://flighthub.hellenpastana.com/api/v1/trip/
 
 The json format to store data in this api is:
 ```json
@@ -53,16 +53,16 @@ The json format to store data in this api is:
 ```
 
 ## To show a trip
-http://flighthub.hellenpastana.com/trip/1
+http://flighthub.hellenpastana.com/api/v1/trip/1
 
 ## To delete a trip
-http://flighthub.hellenpastana.com/trip/1/delete
+http://flighthub.hellenpastana.com/api/v1/trip/1/delete
 
 ## To get a list of flights
-http://flighthub.hellenpastana.com/flight
+http://flighthub.hellenpastana.com/api/v1/flight
 
 ## To store a flight
-http://flighthub.hellenpastana.com/flight
+http://flighthub.hellenpastana.com/api/v1/flight
 
 The json format to store data in this api is:
 ```json
@@ -78,10 +78,10 @@ The json format to store data in this api is:
 ```
 
 ## To show a flight
-http://flighthub.hellenpastana.com/flight/1
+http://flighthub.hellenpastana.com/api/v1/flight/1
 
 ## To update a flight
-http://flighthub.hellenpastana.com/flight/1
+http://flighthub.hellenpastana.com/api/v1/flight/1
 
 The json format to update data in this api is:
 
@@ -98,13 +98,13 @@ The json format to update data in this api is:
 ```
 
 ## To delete a flight
-http://flighthub.hellenpastana.com/flight/1/delete
+http://flighthub.hellenpastana.com/api/v1/flight/1/delete
 
 ## To get a list of airline companies
-http://flighthub.hellenpastana.com/airline
+http://flighthub.hellenpastana.com/api/v1/airline
 
 ## To store an airline
-http://flighthub.hellenpastana.com/airline
+http://flighthub.hellenpastana.com/api/v1/airline
 
 The json format to store data in this api is:
 
@@ -116,10 +116,10 @@ The json format to store data in this api is:
 ```
 
 ## To show an airline company
-http://flighthub.hellenpastana.com/airline/1
+http://flighthub.hellenpastana.com/api/v1/airline/1
 
 ## To update an airline company
-http://flighthub.hellenpastana.com/airline/1
+http://flighthub.hellenpastana.com/api/v1/airline/1
 
 The json format to update data in this api is:
 
@@ -131,14 +131,14 @@ The json format to update data in this api is:
 ```
 
 ## To delete an airline company
-http://flighthub.hellenpastana.com/airline/1/delete
+http://flighthub.hellenpastana.com/api/v1/airline/1/delete
 
 
 ## To get a list of airports
-http://flighthub.hellenpastana.com/airport
+http://flighthub.hellenpastana.com/api/v1/airport
 
 ## To store an airport
-http://flighthub.hellenpastana.com/airport
+http://flighthub.hellenpastana.com/api/v1/airport
 
 The json format to store data in this api is:
 
@@ -157,7 +157,7 @@ The json format to store data in this api is:
 ```
 
 ## To update an airport
-http://flighthub.hellenpastana.com/airport/1
+http://flighthub.hellenpastana.com/api/v1/airport/1
 
 The json format to update data in this api is:
 
@@ -176,10 +176,10 @@ The json format to update data in this api is:
 ```
 
 ## To show an airport
-http://flighthub.hellenpastana.com/airport/1
+http://flighthub.hellenpastana.com/api/v1/airport/1
 
 ## To delete an airport
-http://flighthub.hellenpastana.com/airport/1/delete
+http://flighthub.hellenpastana.com/api/v1/airport/1/delete
 
 Moreover, a json file with the endpoints from Insomnia are available in a separate file in public/endpoints.
 
