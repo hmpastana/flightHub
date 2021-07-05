@@ -1,32 +1,40 @@
 # FlightHub
 
+This application is used to build and navigate flights for a single passenger.
+
 I created the system using the latest version of the Laravel Framework. I used migrations to create the tables and all tables have a seeder to populate the database
-On this project, I used the MySQL database and for testing the application I used Insomnia.
-
-This application is used to build and navigate flights for a single passenger. 
-
+On this project, I used MySQL database and for testing the application I used Insomnia, however you can use whichever is your choice (e.g. Postman).
+ 
 ## Installation
 
 To start locally running this project, please run the commands bellow:
+
+Note: Prepare the file .env before running the command below, in order to run the migration correctly.
 
 - composer update
 - php artisan key: generate
 - php artisan migrate --seed
 
-PS: Prepare the file .env before running the command below, in order to run the migration correctly.
-
 ## Usage
+
 This webservice is hosted at
-[FlightHub](http://flighthub.hellenpastana.com)
+[FlightHub - Hellen Pastana](http://flighthub.hellenpastana.com)
 
 ## To check the available flights
 http://flighthub.hellenpastana.com/trip/{departure_location}/{arrival_location}/{departure_date}
 
-To filter results add the following parameters to the previous url:
+The parameters formats are:
+```json
+departure_location: YUL
+arrival_location: YYZ
+departure_date: 2021-07-02
+```
+
+To filter the results add the following parameters to the previous url:
 
 ```json
 ?airline=AC
-?order_by=price,asc (Type the collumn name and the ordering option)
+?order_by=price,asc - type the collumn name and the ordering option
 ?one_way=true - if you want to set one way trips
 ```
 
@@ -172,7 +180,6 @@ http://flighthub.hellenpastana.com/airport/1
 
 ## To delete an airport
 http://flighthub.hellenpastana.com/airport/1/delete
-
 
 Moreover, a json file with the endpoints from Insomnia are available in a separate file in public/endpoints.
 
